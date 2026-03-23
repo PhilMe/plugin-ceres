@@ -152,13 +152,15 @@ export default {
             return mime.lookup(url);
         },
         getHeight() {
-            if (this.height && this.height > 0 && this.defaultImageUrl.includes('/full/')) {
+            // JB-FIX: Removed '/full/' URL restriction to always pass height for CLS prevention
+            if (this.height && this.height > 0) {
                 return this.height;
             }
             return undefined;
         },
         getWidth() {
-            if (this.width && this.width > 0 && this.defaultImageUrl.includes('/full/')) {
+            // JB-FIX: Removed '/full/' URL restriction to always pass width for CLS prevention
+            if (this.width && this.width > 0) {
                 return this.width;
             }
             return undefined;

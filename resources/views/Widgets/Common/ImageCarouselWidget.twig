@@ -159,17 +159,22 @@
                             {{ Twig.endif() }}
                         {% endif %}
 
+                        {# JB-FIX: Added width/height for CLS prevention on carousel images #}
                         {% if widget.settings.lazyLoading.mobile %}
                             <lazy-img
                                 picture-class="img-cover"
                                 image-url="{{ Twig.print("slide.imageUrl") }}"
                                 fallback-url="{{ Twig.print("slide.fallbackImageUrl") }}"
-                                alt="{{ Twig.print("altText") }}">
+                                alt="{{ Twig.print("altText") }}"
+                                :width="800"
+                                :height="400">
                             </lazy-img>
                             <noscript v-if="false">
                                 <img src="{{ Twig.print("fallbackUrl") }}"
                                     class="img-cover"
-                                    alt="{{ Twig.print("altText") }}">
+                                    alt="{{ Twig.print("altText") }}"
+                                    width="800"
+                                    height="400">
                             </noscript>
                         {% else %}
                             <picture data-alt="{{ Twig.print("altText") }}">
@@ -178,6 +183,8 @@
                                     class="img-cover"
                                     src="{{ Twig.print("fallbackUrl") }}"
                                     alt="{{ Twig.print("altText") }}"
+                                    width="800"
+                                    height="400"
                                 />
                             </picture>
                         {% endif %}

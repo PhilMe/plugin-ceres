@@ -96,6 +96,9 @@
     <link rel="stylesheet" href="{{ plugin_path("Ceres") }}/css/ceres-shopbuilder.css?v={{ buildHash }}">
 {% endif %}
 
+{# JB-FIX: CLS prevention CSS - load early to reserve layout space before JS renders #}
+<link rel="stylesheet" href="{{ plugin_path("Ceres") }}/css/jb-cls-fixes.css?v={{ buildHash }}">
+
 {# add preload polyfill #}
 <script type="application/javascript">
     /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */

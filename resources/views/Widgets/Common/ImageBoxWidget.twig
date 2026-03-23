@@ -113,18 +113,23 @@
                 {{ Twig.endif() }}
             {% endif %}
 
+            {# JB-FIX: Added width/height props to lazy-img and img tags for CLS prevention #}
             {% if widget.settings.lazyLoading.mobile %}
                 <lazy-img
                     picture-class="img-{{ imageSize }}"
                     image-url="{{ Twig.print("imageUrl") }}"
                     fallback-url="{{ fallbackImagePath }}"
                     alt="{{ Twig.print("imageAltText") }}"
+                    :width="800"
+                    :height="400"
                     {{ Twig.if("imageName | trim is not empty") }}title="{{ Twig.print("imageName") }}"{{ Twig.endif() }}>
                 </lazy-img>
                 <noscript v-if="false">
                     <img src="{{ Twig.print("fallbackUrl") }}"
                         class="img-{{ imageSize }}"
                         alt="{{ Twig.print("imageAltText") }}"
+                        width="800"
+                        height="400"
                         {{ Twig.if("imageName | trim is not empty") }}title="{{ Twig.print("imageName") }}"{{ Twig.endif() }}>
                 </noscript>
             {% else %}
@@ -134,6 +139,8 @@
                         class="img-{{ imageSize }}"
                         src="{{ Twig.print("fallbackUrl") }}"
                         alt="{{ Twig.print("imageAltText") }}"
+                        width="800"
+                        height="400"
                         {{ Twig.if("imageName | trim is not empty") }}title="{{ Twig.print("imageName") }}"{{ Twig.endif() }}
                     />
                 </picture>
