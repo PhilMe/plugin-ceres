@@ -1,6 +1,6 @@
 {
     "version"           : "5.0.78",
-    "name"              : "CeresJBS",
+    "name"              : "Ceres",
     "marketplaceName"   : {"de": "plentyShop LTS JBS","en": "plentyShop LTS JBS"},
     "description"       : "plentyShop LTS JBS - Angepasstes Template-Plugin fuer jb-spielwaren.de mit CLS-Fixes und SEO-Optimierungen. Basierend auf plentyShop LTS (Ceres) v5.0.78.",
     "author"            : "JB Spielwaren",
